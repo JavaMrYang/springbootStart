@@ -1,0 +1,7 @@
+#仿写周瑜老师的springboot启动类
+
+#入口文件MainserviceApplication类，通过依赖@LySpringbootApplication注解，
+LySpringbootApplicationStart类作启动类，通过创建注解上下文，传递当前类名，启动上下文，然后传递给tomcat启动。
+
+其中当启动类不能找到WebServerAutoConfiguration类加载时，通过@Import(WebServerAutoConfiguration.class)导入其他类路径下的类去加载
+另外通过WebServerAutoConfiguration自动配置类，判断是否启动tomcat服务器还是jetty服务器
